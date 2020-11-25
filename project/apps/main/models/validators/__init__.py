@@ -1,1 +1,2 @@
-from apps.main.models.validators.filesize import filesize_validator
+from apps.main.models.validators.filesize import FileSizeValidator
+from apps.main.models.validators.filedimension import FileDimensionValidator
