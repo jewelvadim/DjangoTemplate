@@ -63,3 +63,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     ('assets', os.path.join(STATIC_ROOT, 'assets'))
 ]
+
+ROBOTS_USE_SITEMAP = True
+ROBOTS_USE_SCHEME_IN_HOST = True
