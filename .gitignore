@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+
+.idea
+.env
+
+project/settings/prod.py
+project/media

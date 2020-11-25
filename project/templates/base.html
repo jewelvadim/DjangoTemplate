@@ -1,0 +1,46 @@
+{% load extra_tags %}
+{% load recaptcha3 %}
+
+
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block canonical %}
+    {% endblock %}
+
+    {% block seo %}
+        {% include 'components/seo.html' %}
+    {% endblock %}
+
+    {% if not config.allow_robots %}
+        <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {% block css %}
+    {% endblock %}
+
+    {% recaptcha_init %}
+    {% recaptcha_ready %}
+
+</head>
+
+<body>
+
+    {% include 'components/header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'components/footer.html' %}
+
+    {% block js %}
+        {% if not debug %}
+            {{ config.extra_scripts|safe }}
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
