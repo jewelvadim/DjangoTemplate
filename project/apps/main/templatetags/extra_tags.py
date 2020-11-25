@@ -2,6 +2,7 @@ import os
 import time
 
 from django import template
+from django.utils.http import urlencode
 
 from sorl.thumbnail import get_thumbnail
 
@@ -22,7 +23,7 @@ def make_thumb(value, size):
 def sstatic(path):
 	full_path = os.path.join(STATIC_ROOT, path)
 	try:
-		mtime = time.strftime("%d.%m.%Y-%H.%M", time.gmtime(os.path.getmtime(full_path)))
+		mtime = time.strftime("%d.%m-%Y.%H.%M", time.gmtime(os.path.getmtime(full_path)))
 		return '{}{}?{}'.format(STATIC_URL, path, mtime)
 	except OSError:
 		return '{}{}'.format(STATIC_URL, path)
