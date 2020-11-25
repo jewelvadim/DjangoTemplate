@@ -13,7 +13,7 @@ def createsuperuser():
     local("docker exec -it $(docker ps | grep server_ | awk '{{ print $1 }}') python manage.py createsuperuser")
 
 
-def createsuperuser():
+def collectstatic():
     local("docker exec -it $(docker ps | grep server_ | awk '{{ print $1 }}') python manage.py collectstatic --noinput")
 
 
