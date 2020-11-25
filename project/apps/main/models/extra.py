@@ -1,6 +1,6 @@
 from django.db import models
 
-from apps.main.models import SeoAbstract, ActiveAbstract
+from apps.core.models import SeoAbstract, ActiveAbstract
 
 
 class SeoItem(SeoAbstract):
