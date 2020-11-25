@@ -11,13 +11,11 @@ from apps.main.models import Email, MainConfig
 def init_defaults(apps, schema_editor):
     User.objects.create_superuser('project', os.getenv('EMAIL_HOST'), os.getenv('ADMIN_PASSWORD'))
     Email.objects.create(email='hunterrrrrrrr@mail.ru')
-    MainConfig.objects.create()
 
 
 def reset_defaults(apps, schema_editor):
     User.objects.filter(username="project", is_superuser=True).delete()
     Email.objects.filter(email='hunterrrrrrrr@mail.ru').delete()
-    MainConfig.objects.first().delete()
 
 
 class Migration(migrations.Migration):
